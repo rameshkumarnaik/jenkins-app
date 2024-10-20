@@ -24,13 +24,6 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            echo 'Cleaning up...'
-            archiveArtifacts artifacts: 'build/libs/*.jar', allowEmptyArchive: true
-            junit 'build/test-results/test/*.xml' // Adjust if using Maven
-        }
-    }
 }
 
 
