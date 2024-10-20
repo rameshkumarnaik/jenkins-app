@@ -2,16 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                echo 'Checking out...'
-                sh "pwd"
-                checkout scm
-            }
-        }
         stage('Build') {
             steps {
                 echo 'Building...'
+                sh 'chmod +x ./gradlew'
                 sh './gradlew build' // or 'mvn clean install' if using Maven
             }
         }
